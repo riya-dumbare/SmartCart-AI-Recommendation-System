@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>SmartCart | AI-Powered Electronics Store</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-microchip"></i> Smart<span>Cart</span>
+      </div>
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search for electronics, laptops, accessories...">
+      </div>
+      <div class="nav-icons">
+        <a href="#" id="loginRegisterBtn" class="nav-link"><i class="fas fa-user-circle"></i> <span>Login / Register</span></a>
+        <a href="#" id="cartIconNav" class="nav-link cart-icon"><i class="fas fa-shopping-cart"></i> <span>Cart</span> <span id="cartCountBadge">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== MODAL (LOGIN/REGISTER) ==================== -->
+  <div id="authModal" class="modal">
+    <div class="modal-content auth-modal">
+      <span class="close-modal">&times;</span>
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-form="login">Login</button>
+        <button class="tab-btn" data-form="register">Register</button>
+      </div>
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form active-form">
+        <h3>Welcome Back</h3>
+        <input type="email" placeholder="Email address" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn-primary full-btn">Login</button>
+        <p class="demo-note">Demo: use any email</p>
+      </form>
+      <!-- Register Form -->
+      <form id="registerForm" class="auth-form">
+        <h3>Create Account</h3>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn-primary full-btn">Register</button>
+        <p class="demo-note">Join SmartCart AI experience</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============== MAIN APP: ROUTING CONTAINER ============== -->
+  <main id="app">
+    <!-- Pages will be dynamically injected here -->
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>SmartCart</h4>
+        <p>AI-powered electronics <br>shopping reimagined.</p>
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">AI Technology</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">support@smartcart.ai</a></li>
+          <li><a href="#">+1 800 123 4567</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SmartCart — AI Recommendation Engine | Mini Project</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
