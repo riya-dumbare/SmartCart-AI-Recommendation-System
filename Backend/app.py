@@ -3,16 +3,13 @@ from flask_mysqldb import MySQL
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from recommendation import get_recommendations
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 app = Flask(__name__)
 
 app.secret_key = "smartcart_secret_key"
-
-# MySQL Configuration
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "riya"
-app.config["MYSQL_DB"] = "smartcart"
 
 mysql = MySQL(app)
 
@@ -377,5 +374,5 @@ def sales_report():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
 
