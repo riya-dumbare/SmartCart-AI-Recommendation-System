@@ -5,6 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from recommendation import get_recommendations
 import os
 from dotenv import load_dotenv
+from werkzeug.security import generate_password_hash, check_password_hash
 
 load_dotenv()
 app = Flask(__name__)
@@ -32,6 +33,8 @@ def register():
         password = request.form["password"]
 
         cur = mysql.connection.cursor()
+
+        hashed_password = generate_password_hash(password)
 
         # Insert user into database
         cur.execute(
@@ -71,7 +74,7 @@ def login():
             return "User not registered! Please register first."
 
         # Step 2: Check password
-        if user[3] != password:
+        if not check_password_hash(user[3], password):
             cur.close()
             return "Incorrect password!"
 
